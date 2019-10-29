@@ -37,31 +37,3 @@
     return li;
   };
 })();
-window.onload = function() {
-  test("function tests", function() {
-    var text = "Domo arigato!";
-    function useless(cb) {
-      return cb();
-    }
-    assert(
-      useless(function() {
-        return text;
-      }) === text,
-      "the useless function works! " + text
-    );
-
-    assert(typeof window.isNimble === "function", "isNimble() defined");
-    assert(isNimble.name === "isNimble", "isNimble() has a name");
-
-    assert(typeof window.canFly === "function", "canFly() defined");
-    assert(canFly.name === "", "canFly() has no name");
-  });
-};
-function isNimble() {
-  //only part of the window object if it is declared outside of the anon function.
-  return true;
-}
-
-var canFly = function() {
-  return true;
-};
